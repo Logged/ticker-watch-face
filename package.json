@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~5.0.0"
+  },
+  "fitbit": {
+    "appUUID": "ab2caea9-1e70-4278-b3ab-4c3402401845",
+    "appType": "clockface",
+    "appDisplayName": "watch_face_stock_check",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "watch_face_stock_check"
+      }
+    },
+    "defaultLanguage": "en-US"
+  }
+}

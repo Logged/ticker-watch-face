@@ -1,0 +1,43 @@
+.background {
+  viewport-fill: black;
+}
+
+#timeLabel {
+  font-size: 90;
+  font-family: System-Regular;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 50%;
+  fill: white;
+}
+
+#heartRateLabel {
+  font-size: 28;
+  font-family: System-Regular;
+  text-length: 50;
+  text-anchor: middle;
+  x: 25%;
+  y: 80%;
+  fill: #7c7c79;
+}
+
+#dateLabel {
+  font-size: 28;
+  font-family: System-Regular;
+  text-length: 50;
+  text-anchor: middle;
+  x: 50%;
+  y: 18%;
+  fill: #7c7c79;  
+}
+
+#stockPriceLabel {
+  font-size: 28;
+  font-family: System-Regular;
+  text-length: 50;
+  text-anchor: middle;
+  x: 75%;
+  y: 80%;
+  fill: #7c7c79;
+}
