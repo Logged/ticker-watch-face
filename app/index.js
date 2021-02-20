@@ -1,6 +1,7 @@
 import clock from "clock";
 import document from "document";
-import { setDateDisplay, setHeartRateDisplay, setTimeDisplay, setStockPriceDisplay } from "../services"
+import * as messaging from "messaging";
+import { setDateDisplay, setHeartRateDisplay, setTimeDisplay, setStockPriceDisplay } from "./services"
 
 
 
@@ -11,10 +12,17 @@ const stockPriceLabel = document.getElementById("stockPriceLabel");
 
 clock.granularity = "seconds";
 
-setStockPriceDisplay(stockPriceLabel);
 setHeartRateDisplay(heartRateLabel);
+setStockPriceDisplay(stockPriceLabel);
 
 clock.ontick = (evt) => {
   setTimeDisplay(timeLabel, evt);
   setDateDisplay(dateLabel, evt);
 }
+
+messaging.peerSocket.onmessage = (evt) => {
+  if (evt.data) {
+    stockPriceLabel.text = evt.data.price;
+    stockPriceLabel.style.fill = evt.data.color;
+  }
+};

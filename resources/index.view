@@ -2,5 +2,5 @@
   <text id="timeLabel" />
   <text id="dateLabel" />
   <text id="heartRateLabel" />
-  <text id="stockPriceLabel" />
+  <text id="stockPriceLabel"/>
 </svg>
