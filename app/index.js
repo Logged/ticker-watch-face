@@ -1,28 +1,30 @@
 import clock from "clock";
 import document from "document";
+import { display } from "display";
 import * as messaging from "messaging";
-import { setDateDisplay, setHeartRateDisplay, setTimeDisplay, setStockPriceDisplay } from "./services"
-
-
+import TickerService from "./services/TickerService.js";
+import { setDateDisplay, setHeartRateDisplay, setTimeDisplay } from "./services"
 
 const timeLabel = document.getElementById("timeLabel");
 const dateLabel = document.getElementById("dateLabel");
 const heartRateLabel = document.getElementById("heartRateLabel");
 const stockPriceLabel = document.getElementById("stockPriceLabel");
+const ts = new TickerService(stockPriceLabel);
 
 clock.granularity = "seconds";
-
 setHeartRateDisplay(heartRateLabel);
-setStockPriceDisplay(stockPriceLabel);
 
 clock.ontick = (evt) => {
   setTimeDisplay(timeLabel, evt);
   setDateDisplay(dateLabel, evt);
-}
+};
+
+display.onchange = () => {
+  if (display.on) {
+    ts.setStockPriceDisplay(()=>{messaging.peerSocket.send("")});
+  }
+};
 
 messaging.peerSocket.onmessage = (evt) => {
-  if (evt.data) {
-    stockPriceLabel.text = evt.data.price;
-    stockPriceLabel.style.fill = evt.data.color;
-  }
+  ts.parse(evt.data);
 };

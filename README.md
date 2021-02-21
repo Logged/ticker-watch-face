@@ -1,0 +1,1 @@
+![Alt text](/resources/watch_face_stock_check-screenshot.png?raw=true "Screenshot")
