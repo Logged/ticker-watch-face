@@ -18,7 +18,7 @@ function fetchStockPrice() {
 
 function parseResponse(data) {
   let currentPrice = data["latestPrice"];
-  let open = data["open"];
+  let open = data["previousClose"];
   let volume = data["latestVolume"];
   return {
     price: currentPrice,

@@ -3,4 +3,5 @@
   <text id="dateLabel" />
   <text id="heartRateLabel" />
   <text id="stockPriceLabel"/>
+  <text id="stockVolumeLabel"/>
 </svg>

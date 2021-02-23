@@ -9,7 +9,9 @@ const timeLabel = document.getElementById("timeLabel");
 const dateLabel = document.getElementById("dateLabel");
 const heartRateLabel = document.getElementById("heartRateLabel");
 const stockPriceLabel = document.getElementById("stockPriceLabel");
-const ts = new TickerService(stockPriceLabel);
+const stockVolumeLabel = document.getElementById("stockVolumeLabel");
+
+const ts = new TickerService(stockPriceLabel, stockVolumeLabel);
 
 clock.granularity = "seconds";
 setHeartRateDisplay(heartRateLabel);

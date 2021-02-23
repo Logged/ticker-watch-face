@@ -5,6 +5,14 @@ export function zeroPad(i) {
   return i;
 }
 
+export function volumeParse(val) {
+  return (val / 1000000).toFixed(2) + "M"
+}
+
+export function priceParse(val) {
+  return val.toFixed(2)
+}
+
 export function isMarketOpen() {
   let today = new Date();
   let hours = today.getHours();
