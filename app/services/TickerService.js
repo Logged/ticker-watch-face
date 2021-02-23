@@ -12,6 +12,7 @@ export default class TickerService {
 
   setStockPriceDisplay(callback) {
     this.priceLabel.text = "Loading...";
+    this.volumeLabel.text = "";
     if (!isMarketOpen() && this.cache) {
       this.parse(this.cache);
     } else {

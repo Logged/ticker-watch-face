@@ -17,9 +17,10 @@ function fetchStockPrice() {
 }
 
 function parseResponse(data) {
-  let currentPrice = data["latestPrice"];
-  let open = data["previousClose"];
-  let volume = data["latestVolume"];
+  let ticker = data["PSTH"]
+  let currentPrice = ticker["regularMarketLastPrice"];
+  let open = ticker["closePrice"];
+  let volume = ticker["totalVolume"];
   return {
     price: currentPrice,
     volume: volume,
